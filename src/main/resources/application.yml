@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: AOP auditing with MongoDB
+  datasource:
+    url: jdbc:mysql://localhost:3306/aop-test?useSSL=false&encoding=utf8&timezone=CET
+    name: MySQL connection
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: demo
+      password: demo123
+      database: audit_db
+  liquibase:
+      change-log: classpath:/liquibase/master.xml
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 15m
+

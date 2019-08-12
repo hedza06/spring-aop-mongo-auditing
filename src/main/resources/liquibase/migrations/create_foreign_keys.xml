@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="create-foreign-keys" author="hedza06">
+        <addForeignKeyConstraint
+            baseTableName="user_role"
+            baseColumnNames="user_id"
+            constraintName="fk_user_role_user_id_key"
+            referencedTableName="user"
+            referencedColumnNames="id" />
+        <addForeignKeyConstraint
+            baseTableName="user_role"
+            baseColumnNames="role_id"
+            constraintName="fk_user_role_role_id_key"
+            referencedTableName="role"
+            referencedColumnNames="id" />
+    </changeSet>
+
+</databaseChangeLog>
